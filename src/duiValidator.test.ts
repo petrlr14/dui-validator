@@ -14,4 +14,9 @@ describe("duiValidator", () => {
   it("should return true on valid dui", () => { 
     expect(duiValidator("023827235")).toBe(true);
   })
+
+  //my tests
+  it("should not be empty", () => {
+    expect(duiValidator(" ")).toBe(false);
+  })
 })
