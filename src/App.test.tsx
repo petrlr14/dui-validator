@@ -9,7 +9,7 @@ describe('App', () => {
     expect(screen).toBeTruthy;
   });
 
-  it('should have title ', () => {
+  it('should have correct title  ', () => {
     render(<App />);
 
     expect(screen.getByText('Mi DUI es valido?')).toBeInTheDocument();
