@@ -14,4 +14,12 @@ describe("duiValidator", () => {
   it("should return true on valid dui", () => { 
     expect(duiValidator("023827235")).toBe(true);
   })
+
+  it("should return false on valid dui with dashes", () => { 
+    expect(duiValidator("02382723-5")).toBe(false);
+  })
+
+  it("should not be empty", () => {
+    expect(duiValidator("")).toBe(false);
+  })
 })
