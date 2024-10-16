@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import duiValidator from './duiValidator'
+import toast, { Toaster } from "react-hot-toast"
 
 function App() {
 
@@ -7,9 +8,13 @@ function App() {
 
   const onSubmit = () => { 
     if (duiValidator(value)) {
-      console.log('es true');
+      toast.success('El DUI es valido', {
+        duration: 5000,
+      });
     } else { 
-      console.log('no es true');
+      toast.error('El DUI no es valido', {
+        duration: 5000,
+      });
     }
   }
 
@@ -35,6 +40,7 @@ function App() {
           <button className='bg-blue-700 text-white w-auto py-2 px-3 rounded'>Validar</button>
         </form>
       </div>
+      <Toaster/>
     </div>
   )
 }
